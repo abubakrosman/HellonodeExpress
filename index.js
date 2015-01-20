@@ -6,7 +6,11 @@ var express = require("express"),
     server.listen(port, function(){
         console.log("server listening at port %d", port);
     });
-    app.use(express.static(__dirname + '/www'));
 
+    app.get ("/student/:id", function (req, res){
+        res.end(req.params.id + "   rocks");
+    });
+
+app.use(express.static(__dirname + '/www'));
 
 
